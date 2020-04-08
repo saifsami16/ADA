@@ -1,0 +1,37 @@
+ADA - Programming Test 1.
+
+Mark 2:
+In a grid of size NxM there are nests. Each grid-point has a nest (therefore NxM nests are given).
+In spring new-born birds (nestlings) will appear in each nest.
+Write a generic function Count which counts how many nestlings are in a grid,
+i.e.sums the new-born bird population in the grid.
+
+The generic parameters are:
+- an index type.
+- the Grid represented as a matrix of size NxM with the above index and of natural elements.
+The parameter of the Count function is a Grid, which provides new-born birds in each of the NxM nests (natural values).
+The function should return the global (sum) number of new birds' population.
+In a demo use a grid of 10x10, initialize it, and print the above global value.
+
+Mark 3:
+Write a generic function More_Than which decides if there are more then a given Max value new birds in a grid! 
+If you reached the Max limit you can stop counting.
+The generic parameters are like for the Count.
+The More_Than function has a Grid parameter, and the Max natural value, and returns the answer to the above question.
+In a demo use a grid of 10x10, initialize it, and print the answer.
+
+Mark 4:
+Write a generic function Count_Value which is similar to the Count one.
+The generic parameters are:
+- an element and an index type.
+- the Grid represented as a matrix of size NxM with the above index and element types.
+- a Predicate functor with an element type input and logical return value, and it decides if a nest has the given property.
+The Count_Value function has a Grid parameter and decides how many nests are with the given Predicate property.
+In a demo use a grid of 10x10, initialize it, and print how many nests have more then 3 new born birds.
+
+Mark 5:
+Write a Migrate generic procedure, which if a nest has more then Max birds, then it tries placing all the birds above 
+the Max value in north, south, left right neighbor nests. 
+Make local rearrangings, the birds that have no place in neighbor nests will fly away (no action needs to be taken).
+The generic parameters are: the index type and the Grid type. The procedure has a Grid and a Max parameter.
+In a demo migrate the birds of a grid of 10x10, and print the new grid.

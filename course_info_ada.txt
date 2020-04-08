@@ -1,0 +1,29 @@
+Course deadlines (for English BSC only):
+
+(For Hungarian groups bead.inf.elte.hu is used - check there 
+
+homeworks, deadlines, exams)
+
+2018/2019 Autumn semester:
+
+1. mandatory first homework about generics (home_work1.pdf)
+
+to be submitted before the mid-term exam
+
+2. Mid-term exam on 16th November 2018 at lab time in 2.315 (mark1)
+
+3. mandatory second homework about tasks (home_work2.txt)
+
+to be submitted before the end term exam 
+
+4. End term exam on 19th December 2018 at 10 a.m. in 2.315 (mark2)
+
+which starts with final theoretical test (mark3);
+
+see the possible questions on the web.
+
+Final mark = average of the three marks.
+
+Retake of what is missing (test and/or exam1 and/or exam2) TBA.
+
+ 

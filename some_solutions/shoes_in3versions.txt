@@ -1,0 +1,146 @@
+VERSION 1:
+
+with text_io; use text_io;
+procedure pairOfShoes is
+  
+     
+   task Sand is
+      entry Left;
+      entry Right;
+   end Sand;
+  
+  
+   task type Shoe(currentShoe:Integer);
+   task body Shoe is
+   begin
+      for I in 1..5 loop
+         if currentShoe = 1 then
+            sand.Left;
+         else
+            sand.Right;
+         end if;
+         delay 1.0;
+      end loop;
+   end Shoe;
+  
+   lShoe : Shoe(1);
+   rShoe : Shoe(2);
+
+  
+   task body Sand is
+      check : Boolean := False;
+   begin
+      for I in 1..10 loop
+         if check then
+            accept Left;
+            Put_Line("Left Shoe walked");
+            check := false;
+         else
+            accept Right;
+            Put_Line("Right Shoe walked");
+            check := true;
+           
+         end if;
+      end loop;
+   end Sand;
+  
+  
+begin
+   null;
+end pairOfShoes;
+
+---------------------------------
+VERSION 2:
+
+with Ada.Text_IO; use Ada.Text_IO;
+
+procedure PairOfShoes2 is
+
+   type Steps is (Left, Right);
+
+    task Feet is
+      entry Order( whatFoot: in Steps);
+    end Feet;
+
+    task body Feet is
+    begin
+        for I in 1..10 loop
+            accept Order ( whatFoot: in Steps ) do
+                Put_Line("walking with: " & Steps'Image(whatFoot));
+                delay 1.0;
+            end Order;
+        end loop;
+    end Feet;
+
+    task Sand;
+
+    task body Sand is
+      currentFoot : Boolean := false;
+   begin
+      for I in 1..10 loop
+         if currentFoot then
+            Feet.Order(Left);
+            currentFoot := false;
+         else
+            Feet.Order(Right);
+            currentFoot := true;
+         end if;
+      end loop;
+   end Sand;
+
+begin
+   null;
+end PairOfShoes2;
+
+---------------------------------
+VERSION 3:
+
+
+with text_io; use text_io;
+procedure pairOfShoes3 is
+
+
+task Shoeleft;
+task shoeRight;
+
+task Sand is
+entry Left;
+entry Right;
+end Sand;
+
+task body Sand is
+check : Boolean := False;
+begin
+for I in 1..10 loop
+if check then
+accept Left;
+check := false;
+else
+accept Right;
+check := true;
+end if;
+end loop;
+end Sand;
+
+task body shoeLeft is
+begin
+for I in 1..5 loop
+sand.Left;
+Put_Line("Stepping with left foot");
+delay 1.0;
+end loop;
+end shoeLeft;
+
+task body shoeRight is
+begin
+for I in 1..5 loop
+sand.Right;
+Put_Line("Stepping with right foot");
+delay 1.0;
+end loop;
+end shoeRight;
+
+
+begin
+null;
+end pairOfShoes3;

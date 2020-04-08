@@ -1,0 +1,13 @@
+
+Given a petrol station with N filling stations and more then N cars, write an agenda of the activities of the station. 
+The station should be protected. The cars after arrival will fill their tank (max N cars at the same time) and leave the station. If more cars are arriving, they should queue at the stations and wait for an empty one. As soon as one is empty, the car will go there. 
+Each car has: 
+- a licence number, and when is filling up has to give it to the station to register in the agenda, and
+- a filling up time (both are discriminants of the dynamically created cars). 
+The cars are arriving in random time intervals (between 0.1 and 0.5 seconds) at the station. 
+There are 3 types of drivers: 
+impatient, if no station is free then leaves immediately, 
+patient that waits 0.5 seconds for an empty place, and 
+the third who waits anyhow for a free place, since he has no fuel left. 
+The type of the drivers should be determined randomly.
+Write every activity on the screen using a protected orinter.
